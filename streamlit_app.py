@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 import PyPDF2
 import openai
-openai.api_key = "YOUR_API_KEY"
+
+# Accedemos a la clave de API de OpenAI a través de una variable de entorno
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 # Función para extraer texto de un PDF
 def extract_text_from_pdf(file):
